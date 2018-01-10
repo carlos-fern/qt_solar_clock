@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<solar_system>
+
+<celetial_body>
+	<name>Mercury</name>
+	<mass>  </mass>
+	<relative_size> </relative_size>
+	<orbital_velocity> </orbital_velocity>
+	<trajectory_file_path> </trajectory_file_path>
+	<image_file_path> </image_file_path>
+	<image_crop_radius> </image_crop_radius>
+</celetial_body>
+
+<celetial_body>
+	<name>Venus</name>
+	<mass>  </mass>
+	<relative_size> </relative_size>
+	<orbital_velocity> </orbital_velocity>
+	<trajectory_file_path> </trajectory_file_path>
+	<image_file_path> </image_file_path>
+	<image_crop_radius> </image_crop_radius>
+</celetial_body>
+
+<celetial_body>
+	<name>Earth</name>
+	<mass>  </mass>
+	<relative_size> </relative_size>
+	<orbital_velocity> </orbital_velocity>
+	<trajectory_file_path> </trajectory_file_path>
+	<image_file_path> </image_file_path>
+	<image_crop_radius> </image_crop_radius>
+</celetial_body>
+
+<celetial_body>
+	<name>Mars</name>
+	<mass>  </mass>
+	<relative_size> </relative_size>
+	<orbital_velocity> </orbital_velocity>
+	<trajectory_file_path> </trajectory_file_path>
+	<image_file_path> </image_file_path>
+	<image_crop_radius> </image_crop_radius>
+</celetial_body>
+
+<celetial_body>
+	<name>Jupiter</name>
+	<mass>  </mass>
+	<relative_size> </relative_size>
+	<orbital_velocity> </orbital_velocity>
+	<trajectory_file_path> </trajectory_file_path>
+	<image_file_path> </image_file_path>
+	<image_crop_radius> </image_crop_radius>
+</celetial_body>
+
+<celetial_body>
+	<name>Saturn</name>
+	<mass>  </mass>
+	<relative_size> </relative_size>
+	<orbital_velocity> </orbital_velocity>
+	<trajectory_file_path> </trajectory_file_path>
+	<image_file_path> </image_file_path>
+	<image_crop_radius> </image_crop_radius>
+</celetial_body>
+
+<celetial_body>
+	<name>Uranus</name>
+	<mass>  </mass>
+	<relative_size> </relative_size>
+	<orbital_velocity> </orbital_velocity>
+	<trajectory_file_path> </trajectory_file_path>
+	<image_file_path> </image_file_path>
+	<image_crop_radius> </image_crop_radius>
+</celetial_body>
+
+<celetial_body>
+	<name>Neptune</name>
+	<mass>  </mass>
+	<relative_size> </relative_size>
+	<orbital_velocity> </orbital_velocity>
+	<trajectory_file_path> </trajectory_file_path>
+	<image_file_path> </image_file_path>
+	<image_crop_radius> </image_crop_radius>
+</celetial_body>
+</solar_system>
