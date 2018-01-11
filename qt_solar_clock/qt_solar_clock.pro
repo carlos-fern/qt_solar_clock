@@ -6,7 +6,7 @@
 
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets svg
 
 TARGET = qt_solar_clock
 TEMPLATE = app
@@ -24,10 +24,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-    src/main.cpp \
-    src/mainwindow.cpp \
-    src/celestialbody.cpp \
-    src/solarsystem.cpp
+    solarsystem.cpp \
+    mainwindow.cpp \
+    main.cpp \
+    celestialbody.cpp
 
 HEADERS += \
     include/mainwindow.h \

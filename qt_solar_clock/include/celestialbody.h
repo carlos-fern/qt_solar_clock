@@ -19,6 +19,7 @@ public:
                QWidget *widget) override;
     void vLoadTrajectory(QString filePath);
 
+
 public slots:
     void setMovementScale(int scale);
 
@@ -27,7 +28,7 @@ protected:
 
 private:
     int distanceScale = 100;
-    int movementScale = 100;
+    qreal movementScale = 10000.0;
     int simStepScale = 100;
 
     qreal orbitalVelocity;

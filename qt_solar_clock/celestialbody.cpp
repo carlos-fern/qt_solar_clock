@@ -8,9 +8,11 @@
 
 
 CelestialBody::CelestialBody( QString bodyName, qreal size, qreal orbitalVelocity, QString trajectoryFilePath, QString imageFilePath){
-    vLoadTrajectory(trajectoryFilePath);
-    bodyImage.load(imageFilePath);
+     vLoadTrajectory(trajectoryFilePath);
+   // bodyImage.load(imageFilePath);
     this->bodyName = bodyName;
+    this->orbitalVelocity = orbitalVelocity;
+    this->bodySize = size;
 }
 
 
@@ -31,8 +33,8 @@ void  CelestialBody::vLoadTrajectory(QString filePath){
         while (!trajectoryStream.atEnd()) {
             QString line = trajectoryStream.readLine();
             while ((currentPosition = trajectoryParser.indexIn(line, currentPosition)) != -1) {
-                distanceMeasurements.push_back(trajectoryParser.cap(3).toDouble());
-                currentPosition += trajectoryParser.matchedLength();
+               distanceMeasurements.push_back(trajectoryParser.cap(3).toDouble());
+               currentPosition += trajectoryParser.matchedLength();
             }
             currentPosition = 0;
     }
@@ -52,6 +54,8 @@ void CelestialBody::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
     pen.setWidth(4);
     painter->setPen(pen);
 
+    painter->drawEllipse(QPoint(0,0),2*bodySize,2*bodySize);
+    /*
     QPixmap stp1;
     stp1.setDevicePixelRatio(30000);
     stp1 = bodyImage.scaledToHeight(10);
@@ -62,23 +66,24 @@ void CelestialBody::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
 
     QPainterPath path;
     path.addEllipse(0, 0, 8, 8);
-    painter->setClipPath(path);
+    painter->setClifpPath(path);
     painter->drawPixmap(0, 0, 10, 10, stp2);
-}
+    */
 
+}
 
 void CelestialBody::advance(int step){
     if(!step)
         return;
     else{
-        pathPercentComplete = ((pathPercentComplete + orbitalVelocity /movementScale) <= 1.0) ? (qreal) (pathPercentComplete + orbitalVelocity / (qreal) movementScale) : 0;
+        pathPercentComplete = (qreal)((pathPercentComplete + orbitalVelocity / movementScale)<= 1.0 ? (pathPercentComplete + orbitalVelocity / movementScale) : 0.0);
         this->setPos(obritalTrajectory.pointAtPercent(pathPercentComplete));
     }
 }
 
 
 QRectF CelestialBody::boundingRect() const {
-    return QRectF(-320, -240, 640, 480);
+    return QRectF(-640, -480, 1280, 960);
 }
 
 

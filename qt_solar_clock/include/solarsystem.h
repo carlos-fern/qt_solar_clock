@@ -5,7 +5,11 @@
 #include <QPainter>
 #include <QGraphicsScene>
 #include <QXmlStreamReader>
+
+#include <QtSvg/QGraphicsSvgItem>
+
 #include <QFile>
+
 #include "celestialbody.h"
 
 class SolarSystem: public QGraphicsScene{
@@ -20,7 +24,7 @@ signals:
 
 private:
     void createScene();
-    QPixmap star;
+    QGraphicsSvgItem *Sun;
     CelestialBody *Mercury;
     CelestialBody *Venus;
     CelestialBody *Earth;
