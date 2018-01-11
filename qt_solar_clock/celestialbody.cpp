@@ -54,7 +54,7 @@ void CelestialBody::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
     pen.setWidth(4);
     painter->setPen(pen);
 
-    painter->drawEllipse(QPoint(0,0),2*bodySize,2*bodySize);
+    painter->drawEllipse(QPoint(0,0),50*bodySize,50*bodySize);
     /*
     QPixmap stp1;
     stp1.setDevicePixelRatio(30000);

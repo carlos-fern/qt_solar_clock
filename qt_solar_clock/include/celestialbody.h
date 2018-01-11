@@ -27,7 +27,7 @@ protected:
     void advance(int step) override;
 
 private:
-    int distanceScale = 100;
+    int distanceScale = 10000;
     qreal movementScale = 10000.0;
     int simStepScale = 100;
 

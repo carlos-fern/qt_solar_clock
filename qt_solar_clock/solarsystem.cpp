@@ -35,7 +35,7 @@ void SolarSystem::createScene(){
    Sun = new QGraphicsSvgItem();
    Sun->setPos(-39.25, -39.25);
    Sun->setSharedRenderer(render);
-   Sun->setScale(1);
+   Sun->setScale(.01 * 109);
 
    Mercury = new CelestialBody("Mercury", .38, 47.4,"./heliocentric_trajectories/Mercury.lst", "./images/mercury.jpg");
    Venus = new CelestialBody("Venus", .95 ,35.0,"./heliocentric_trajectories/Venus.lst", "./images/venus.jpg");
@@ -45,8 +45,11 @@ void SolarSystem::createScene(){
    Saturn = new CelestialBody("Saturn", 9.40, 9.7, "./heliocentric_trajectories/Saturn.lst", "/images/saturn.jpg");
    Uranus = new CelestialBody("Uranus", 4.04, 6.8, "./heliocentric_trajectories/Uranus.lst", "/images/uranus.jpg");
    Neptune = new CelestialBody("Neptune",3.88, 5.4, "./heliocentric_trajectories/Neptune.lst", "./images/neptune.jpg");
-
-   this->addItem(Sun);
+   QPen pen;
+   pen.setColor(Qt::red);
+   pen.setWidth(109*10);
+   this->addEllipse(0.0,0.0, 10 * 109, 10 *109, pen);
+  // this->addItem(Sun);
    this->addItem(Mercury);
    this->addItem(Venus);
    this->addItem(Earth);

@@ -32,8 +32,11 @@ private:
     QSlider *tiltSlider;
     QSlider *panSlider;
     QSlider *zoomSlider;
+    QTransform perspectiveTransform;
+    QMatrix perspectiveTrasformMatrix;
     SolarSystem solarSytem;
     QGraphicsView *solarViewer;
+
 
     QDockWidget *timeWarpSliderDock;
     QDockWidget *tiltSliderDock;
