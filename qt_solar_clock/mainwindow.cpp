@@ -96,6 +96,7 @@ void MainWindow::createInteractive(){
     solarViewer->setViewport(new QOpenGLWidget);
 
 
+
     solarViewer->setTransform(perspectiveTransform);
     this->setCentralWidget(solarViewer);
 
@@ -111,8 +112,7 @@ void MainWindow::createInteractive(){
     solarViewer->setResizeAnchor(QGraphicsView::AnchorViewCenter);
 
 
-    QBrush brush;
-    brush.setColor(Qt::black);
+    solarViewer->setBackgroundBrush(QBrush(Qt::black, Qt::SolidPattern));
     solarViewer->scale(solarSytem.height()*.00001, solarSytem.width()*.00001);
     this->setCentralWidget(solarViewer);
     this->showMaximized();

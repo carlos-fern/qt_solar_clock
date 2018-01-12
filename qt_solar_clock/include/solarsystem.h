@@ -27,8 +27,6 @@ private:
     void createScene();
     QGraphicsSvgItem *Sun;
     QGraphicsEllipseItem *sun;
-    QPainterPath  outSide;
-    QPainterPath * inSide;
     QPainterPathStroker strokedPath;
     CelestialBody *Mercury;
     CelestialBody *Venus;
