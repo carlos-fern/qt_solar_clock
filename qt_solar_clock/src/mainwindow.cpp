@@ -59,8 +59,8 @@ void MainWindow::createInteractive(){
     zoomSlider->setInvertedAppearance(false);
     zoomSlider->setInvertedControls(false);
     zoomSlider->setFixedSize(sliderSize);
-    zoomSlider->setMinimum(1);
-    zoomSlider->setMaximum(100);
+    zoomSlider->setMinimum(3);
+    zoomSlider->setMaximum(120);
     zoomSlider->setValue(5);
 
     dockName = "Time Warp";
@@ -88,18 +88,6 @@ void MainWindow::createInteractive(){
     this->splitDockWidget(tiltSliderDock, panSliderDock, Qt::Vertical);
     this->splitDockWidget(panSliderDock, zoomSliderDock, Qt::Vertical);
 
-    solarViewer = new QGraphicsView(&solarSytem);
-    solarViewer->fitInView(solarSytem.sceneRect(), Qt::KeepAspectRatio);
-    solarViewer->setWindowTitle(QT_TRANSLATE_NOOP(QGraphicsView, "SPACE!"));
-    solarViewer->setCacheMode(QGraphicsView::CacheBackground);
-    solarViewer->setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
-    solarViewer->setViewport(new QOpenGLWidget);
-
-
-
-    solarViewer->setTransform(perspectiveTransform);
-    this->setCentralWidget(solarViewer);
-
     QObject::connect(timeWarpSlider, SIGNAL(valueChanged(int)),
                       &solarSytem, SLOT(setMovementScale(int)));
 
@@ -109,14 +97,24 @@ void MainWindow::createInteractive(){
     QObject::connect(tiltSlider, SIGNAL(valueChanged(int)),
                       this, SLOT(setTiltValue(int)));
 
+
+    solarViewer = new QGraphicsView(&solarSytem);
+    solarViewer->fitInView(solarSytem.sceneRect(), Qt::KeepAspectRatio);
+    solarViewer->setWindowTitle(QT_TRANSLATE_NOOP(QGraphicsView, "SPACE!"));
+    solarViewer->setCacheMode(QGraphicsView::CacheBackground);
+    solarViewer->setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
+    solarViewer->setViewport(new QOpenGLWidget);
+
+   // solarViewer->setTransform(perspectiveTransform);
+    this->setCentralWidget(solarViewer);
+
     solarViewer->setResizeAnchor(QGraphicsView::AnchorViewCenter);
-
-
     solarViewer->setBackgroundBrush(QBrush(Qt::black, Qt::SolidPattern));
-    solarViewer->scale(solarSytem.height()*.00001, solarSytem.width()*.00001);
+    solarViewer->resetMatrix();
+
     this->setCentralWidget(solarViewer);
     this->showMaximized();
-
+    solarViewer->scale(solarSytem.height()*00000001, solarSytem.width()*.00000001);
     QObject::connect(&timer, SIGNAL(timeout()), &solarSytem, SLOT(advance()));
     timer.start(1000/66);
 }
@@ -145,5 +143,5 @@ void MainWindow::setPanValue(int scale){
 
 void MainWindow::setZoomValue(int scale){
        solarViewer->resetMatrix();
-       solarViewer->scale(solarSytem.height()*scale*.000001, solarSytem.width()*scale*.000001);
+       solarViewer->scale(solarSytem.height()*scale*.00000001, solarSytem.width()*scale*.00000001);
 }

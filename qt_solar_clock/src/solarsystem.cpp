@@ -13,7 +13,7 @@ SolarSystem::SolarSystem(){
     pal.setColor(QPalette::Background, Qt::black);
     this->setPalette(pal);
     this->createScene();
-  //  this->setSceneRect(-1024*4, -768*4, 2048*4, 1536*4);
+    this->setSceneRect(-1024*100, -768*100, 2048*100, 1536*100);
 }
 
 
@@ -53,6 +53,9 @@ void SolarSystem::createScene(){
     sun = new QGraphicsEllipseItem(0.0,0.0, 1391400*.0001, 1391400*.0001);
     sun->setPos(QPointF(0,0));
     sun->setPen(pen);
+
+
+
 
     //add tracks (lowest draw)
     this->addItem(Mercury->getTrjectory());

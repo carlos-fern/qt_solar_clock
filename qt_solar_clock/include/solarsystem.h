@@ -20,6 +20,7 @@ public:
     ~SolarSystem();
 public slots:
     void setMovementScale(int scale);
+
 signals:
     void valueChanged(int scale);
 
@@ -28,6 +29,7 @@ private:
     QGraphicsSvgItem *Sun;
     QGraphicsEllipseItem *sun;
     QPainterPathStroker strokedPath;
+    QGraphicsItemGroup group;
     CelestialBody *Mercury;
     CelestialBody *Venus;
     CelestialBody *Earth;

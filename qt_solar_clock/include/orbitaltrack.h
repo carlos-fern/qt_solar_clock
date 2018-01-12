@@ -20,6 +20,8 @@ public:
     QPainterPath shape() const override;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
                QWidget *widget) override;
+protected:
+    void advance(int step) override;
 
 private:
     int distanceScale = 150 *2; //150millionkm = 1au

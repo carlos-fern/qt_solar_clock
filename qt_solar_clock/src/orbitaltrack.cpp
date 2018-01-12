@@ -22,7 +22,15 @@ void ObritalTrack::paint(QPainter *painter, const QStyleOptionGraphicsItem *opti
 }
 
 QRectF ObritalTrack::boundingRect() const {
-    return QRectF(0, 0,0, 0);
+    return QRectF(-2000000, -2000000, 4000000, 4000000);
+}
+
+void ObritalTrack::advance(int step){
+    if(!step)
+        return;
+    else{
+       this->setPos(QPoint(0,0));
+    }
 }
 
 

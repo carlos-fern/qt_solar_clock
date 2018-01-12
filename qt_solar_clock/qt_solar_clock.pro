@@ -4,9 +4,9 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui widgets svg opengl
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets svg
+greaterThan(QT_MAJOR_VERSION, 4): QT +=
 
 TARGET = qt_solar_clock
 TEMPLATE = app
@@ -23,12 +23,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 
+
 SOURCES += \
-    solarsystem.cpp \
-    mainwindow.cpp \
-    main.cpp \
-    celestialbody.cpp \
-    orbitaltrack.cpp
+    src/solarsystem.cpp \
+    src/mainwindow.cpp \
+    src/main.cpp \
+    src/celestialbody.cpp \
+    src/orbitaltrack.cpp
 
 HEADERS += \
     include/mainwindow.h \
@@ -38,3 +39,6 @@ HEADERS += \
 
 FORMS += \
         mainwindow.ui
+
+RCC_DIR = build
+
