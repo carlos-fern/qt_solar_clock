@@ -17,12 +17,13 @@ void ObritalTrack::paint(QPainter *painter, const QStyleOptionGraphicsItem *opti
     pen.setWidth(180);
     pen.setCapStyle(Qt::FlatCap);
     painter->setPen(pen);
+
     painter->setRenderHint(QPainter::HighQualityAntialiasing);
     painter->drawEllipse(this->pos(), min ,max);
 }
 
 QRectF ObritalTrack::boundingRect() const {
-    return QRectF(-2000000, -2000000, 4000000, 4000000);
+    return QRectF(-4000000, -4000000, 8000000, 8000000);
 }
 
 void ObritalTrack::advance(int step){

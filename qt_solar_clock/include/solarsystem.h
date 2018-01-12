@@ -38,6 +38,7 @@ private:
     CelestialBody *Saturn;
     CelestialBody *Uranus;
     CelestialBody *Neptune;
+    qreal zoom=4;
 };
 
 

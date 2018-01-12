@@ -5,6 +5,7 @@
 #include <QPropertyAnimation>
 #include <stdint.h>
 #include <QtSvg/QSvgRenderer>
+#include <QtSvg/QGraphicsSvgItem>
 #include "orbitaltrack.h"
 
 
@@ -44,6 +45,7 @@ private:
     QString bodyName;
     qreal bodySize;
     QSvgRenderer *render;
+    QGraphicsSvgItem svg;
 };
 
 

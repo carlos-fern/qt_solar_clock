@@ -9,7 +9,9 @@
 
 
 CelestialBody::CelestialBody( QString bodyName, qreal size, qreal orbitalVelocity, QString trajectoryFilePath, QString imageFilePath){
-     vLoadTrajectory(trajectoryFilePath);
+    vLoadTrajectory(trajectoryFilePath);
+    render = new QSvgRenderer(imageFilePath);
+    render->setViewBox(QRect(-size*kmToMKM/2, -size*kmToMKM/2, size*kmToMKM, size*kmToMKM));
     this->bodyName = bodyName;
     this->orbitalVelocity = orbitalVelocity;
     this->bodySize = size;
@@ -59,7 +61,13 @@ void CelestialBody::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
     painter->setPen(pen);
     painter->setBrush(QBrush(pen.color()));
     painter->setRenderHint(QPainter::HighQualityAntialiasing);
+    //svg.setPos(this->scenePos());
+    svg.setSharedRenderer(render);
+    svg.setScale(5 );
+    //svg.paint(painter, option, widget);
+
     painter->drawEllipse(this->scenePos(),bodySize*kmToMKM, bodySize*kmToMKM);
+
 }
 
 void CelestialBody::advance(int step){
@@ -73,7 +81,7 @@ void CelestialBody::advance(int step){
 
 
 QRectF CelestialBody::boundingRect() const {
-    return QRectF(.01, .01, .01, .01);
+    return QRectF(-bodySize*kmToMKM/2, -bodySize*kmToMKM/2,bodySize*kmToMKM, bodySize*kmToMKM);
 }
 
 

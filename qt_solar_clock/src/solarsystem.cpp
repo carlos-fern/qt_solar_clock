@@ -38,14 +38,14 @@ void SolarSystem::createScene(){
     Sun->setSharedRenderer(render);
     Sun->setScale(.001 * 109);
 
-    Mercury = new CelestialBody("Mercury", 4878, 47.4,"./heliocentric_trajectories/Mercury.lst", "./images/mercury.jpg");
-    Venus = new CelestialBody("Venus", 12104 ,35.0,"./heliocentric_trajectories/Venus.lst", "./images/venus.jpg");
-    Earth = new CelestialBody("Earth", 6794, 29.8, "./heliocentric_trajectories/Earth.lst", "./images/earth.jpg");
-    Mars = new CelestialBody("Mars", 6794, 24.1, "./heliocentric_trajectories/Mars.lst", "./images/mars.jpg");
-    Jupiter = new CelestialBody("Jupiter", 142984, 13.1, "./heliocentric_trajectories/Jupiter.lst", "/images/jupiter.jpg");
-    Saturn = new CelestialBody("Saturn", 120536, 9.7, "./heliocentric_trajectories/Saturn.lst", "/images/saturn.jpg");
-    Uranus = new CelestialBody("Uranus", 51118, 6.8, "./heliocentric_trajectories/Uranus.lst", "/images/uranus.jpg");
-    Neptune = new CelestialBody("Neptune",49532, 5.4, "./heliocentric_trajectories/Neptune.lst", "./images/neptune.jpg");
+    Mercury = new CelestialBody("Mercury", 4878, 47.4,"./heliocentric_trajectories/Mercury.lst", "./assets/mercury.svg");
+    Venus = new CelestialBody("Venus", 12104 ,35.0,"./heliocentric_trajectories/Venus.lst", "./assets/venus.svg");
+    Earth = new CelestialBody("Earth", 6794, 29.8, "./heliocentric_trajectories/Earth.lst", "./assets/earth.svg");
+    Mars = new CelestialBody("Mars", 6794, 24.1, "./heliocentric_trajectories/Mars.lst", "./assets/mars.svg");
+    Jupiter = new CelestialBody("Jupiter", 142984, 13.1, "./heliocentric_trajectories/Jupiter.lst", "./assets/jupiter.svg");
+    Saturn = new CelestialBody("Saturn", 120536, 9.7, "./heliocentric_trajectories/Saturn.lst", "./assets/saturn.svg");
+    Uranus = new CelestialBody("Uranus", 51118, 6.8, "./heliocentric_trajectories/Uranus.lst", "./assets/uranus.svg");
+    Neptune = new CelestialBody("Neptune",49532, 5.4, "./heliocentric_trajectories/Neptune.lst", "./assets/neptune.svg");
     QPen pen;
     pen.setColor(Qt::red);
     pen.setWidth(200);

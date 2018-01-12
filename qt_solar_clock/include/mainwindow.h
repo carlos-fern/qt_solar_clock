@@ -44,6 +44,8 @@ private:
     QDockWidget *panSliderDock;
     QDockWidget *zoomSliderDock;
     QTimer timer;
+    int zoom= 4;
+    int tilt =0;
 
 };
 

@@ -42,8 +42,8 @@ void MainWindow::createInteractive(){
     tiltSlider->setInvertedAppearance(false);
     tiltSlider->setInvertedControls(false);
     tiltSlider->setFixedSize(sliderSize);
-    tiltSlider->setMinimum(-3);
-    tiltSlider->setMaximum(3);
+    tiltSlider->setMinimum(-100);
+    tiltSlider->setMaximum(100);
     tiltSlider->setValue(0);
 
 
@@ -51,9 +51,9 @@ void MainWindow::createInteractive(){
     panSlider->setInvertedAppearance(false);
     panSlider->setInvertedControls(false);
     panSlider->setFixedSize(sliderSize);
-    panSlider->setMinimum(-100);
-    panSlider->setMaximum(-10);
-    panSlider->setValue(-100);
+    panSlider->setMinimum(0);
+    panSlider->setMaximum(360);
+    panSlider->setValue(0);
 
     zoomSlider = new QSlider;
     zoomSlider->setInvertedAppearance(false);
@@ -104,7 +104,7 @@ void MainWindow::createInteractive(){
     solarViewer->setCacheMode(QGraphicsView::CacheBackground);
     solarViewer->setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
     solarViewer->setViewport(new QOpenGLWidget);
-
+    solarViewer->setDragMode(QGraphicsView::ScrollHandDrag);
    // solarViewer->setTransform(perspectiveTransform);
     this->setCentralWidget(solarViewer);
 
@@ -128,20 +128,25 @@ void MainWindow::setTimeWarpSacle(int scale){
 void MainWindow::setTiltValue(int scale){
     if (scale == 0)
         scale =1;
-  //  perspectiveTransform.setMatrix(1,0,0,0,scale,0,0,0,.01);
-   // solarViewer->setTransform(perspectiveTransform);
-  //  solarViewer->scale(solarSytem.height()*1*.000001, solarSytem.width()*1*.000001);
-
+    QTransform test;
+    tilt = scale;
+    test.rotate(tilt, Qt::XAxis);
+    solarViewer->setTransform(test);
+    solarViewer->scale(solarSytem.height()*zoom*.00000001, solarSytem.width()*zoom*.00000001);
 }
 
 
 void MainWindow::setPanValue(int scale){
 
-
+    solarViewer->rotate(scale);
 }
 
 
 void MainWindow::setZoomValue(int scale){
        solarViewer->resetMatrix();
-       solarViewer->scale(solarSytem.height()*scale*.00000001, solarSytem.width()*scale*.00000001);
+       zoom = scale;
+       QTransform test;
+       test.rotate(tilt, Qt::XAxis);
+       solarViewer->setTransform(test);
+       solarViewer->scale(solarSytem.height()*zoom*.00000001, solarSytem.width()*zoom*.00000001);
 }
