@@ -4,21 +4,23 @@
 #include <QtMath>
 #include <QFile>
 #include <QXmlStreamReader>
+#include <QPainter>
 #include <QFile>
 
 
 CelestialBody::CelestialBody( QString bodyName, qreal size, qreal orbitalVelocity, QString trajectoryFilePath, QString imageFilePath){
      vLoadTrajectory(trajectoryFilePath);
-   // bodyImage.load(imageFilePath);
     this->bodyName = bodyName;
     this->orbitalVelocity = orbitalVelocity;
     this->bodySize = size;
 }
-
-
 CelestialBody::~CelestialBody(){
 
 
+}
+
+ObritalTrack* CelestialBody::getTrjectory(){
+    return track;
 }
 
 
@@ -39,57 +41,45 @@ void  CelestialBody::vLoadTrajectory(QString filePath){
             currentPosition = 0;
     }
 
-    double max = *std::max_element(distanceMeasurements.begin(), distanceMeasurements.end());
-    double min = *std::min_element(distanceMeasurements.begin(), distanceMeasurements.end());
-    obritalTrajectory.addEllipse(QPointF(0,0), max*distanceScale, min*distanceScale);
+    double max = *std::max_element(distanceMeasurements.begin(), distanceMeasurements.end()) *distanceScale;
+    double min = *std::min_element(distanceMeasurements.begin(), distanceMeasurements.end()) *distanceScale;
+    obritalTrajectory.addEllipse(QPointF(0,0), max, min);
+    track = new ObritalTrack(max, min);
 }
 
 
 void CelestialBody::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
                           QWidget *widget){
-
     QColor color;
+    QBrush brush;
+    brush.setColor(Qt::blue);
     QPen pen;
     pen.setColor(Qt::red);
-    pen.setWidth(4);
+    pen.setWidth(30);
     painter->setPen(pen);
-
-    painter->drawEllipse(QPoint(0,0),50*bodySize,50*bodySize);
-    /*
-    QPixmap stp1;
-    stp1.setDevicePixelRatio(30000);
-    stp1 = bodyImage.scaledToHeight(10);
-
-    QPixmap stp2;
-    stp2.setDevicePixelRatio(30000);
-    stp2 = stp1.scaledToWidth(10);
-
-    QPainterPath path;
-    path.addEllipse(0, 0, 8, 8);
-    painter->setClifpPath(path);
-    painter->drawPixmap(0, 0, 10, 10, stp2);
-    */
-
+    painter->setBrush(QBrush(pen.color()));
+    painter->setRenderHint(QPainter::HighQualityAntialiasing);
+    painter->drawEllipse(this->scenePos(),bodySize*kmToMKM, bodySize*kmToMKM);
 }
 
 void CelestialBody::advance(int step){
     if(!step)
         return;
     else{
-        pathPercentComplete = (qreal)((pathPercentComplete + orbitalVelocity / movementScale)<= 1.0 ? (pathPercentComplete + orbitalVelocity / movementScale) : 0.0);
-        this->setPos(obritalTrajectory.pointAtPercent(pathPercentComplete));
+       pathPercentComplete = (qreal)((pathPercentComplete + orbitalVelocity / movementScale)<= 1.0 ? (pathPercentComplete + orbitalVelocity / movementScale) : 0.0);
+       this->setPos(obritalTrajectory.pointAtPercent(pathPercentComplete));
     }
 }
 
 
 QRectF CelestialBody::boundingRect() const {
-    return QRectF(-640, -480, 1280, 960);
+    return QRectF(.01, .01, .01, .01);
 }
 
 
 QPainterPath CelestialBody::shape() const{
     QPainterPath path;
-    path.addRect(-10, -20, 40, 80);
+    path.addEllipse(0,0, 0, 0);
     return path;
 }
 

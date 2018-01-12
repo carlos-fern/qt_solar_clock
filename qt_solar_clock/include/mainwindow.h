@@ -17,6 +17,7 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    void createInteractive();
     ~MainWindow();
 
 public slots:
@@ -27,7 +28,7 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
-    void createInteractive();
+
     QSlider *timeWarpSlider;
     QSlider *tiltSlider;
     QSlider *panSlider;

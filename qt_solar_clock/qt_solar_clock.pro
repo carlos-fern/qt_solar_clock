@@ -27,12 +27,14 @@ SOURCES += \
     solarsystem.cpp \
     mainwindow.cpp \
     main.cpp \
-    celestialbody.cpp
+    celestialbody.cpp \
+    orbitaltrack.cpp
 
 HEADERS += \
     include/mainwindow.h \
     include/celestialbody.h \
-    include/solarsystem.h
+    include/solarsystem.h \
+    include/orbitaltrack.h
 
 FORMS += \
         mainwindow.ui
