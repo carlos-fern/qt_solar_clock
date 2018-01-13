@@ -13,8 +13,9 @@
 class CelestialBody: public QObject, public QGraphicsItem {
     Q_OBJECT
     Q_PROPERTY(QPointF pos READ pos WRITE setPos)
+
 public:
-    CelestialBody(QString bodyName, qreal size, qreal orbitalVelocity, QString trajectoryFilePath, QString imageFilePath);
+    CelestialBody(QString bodyName, qreal size, qreal orbitalVelocity, QString trajectoryFilePath, QColor color);
     ~CelestialBody();
     QRectF boundingRect() const override;
     QPainterPath shape() const override;
@@ -44,8 +45,8 @@ private:
     QPolygonF pathPoly;
     QString bodyName;
     qreal bodySize;
-    QSvgRenderer *render;
-    QGraphicsSvgItem svg;
+    QColor bodyColor;
+
 };
 
 

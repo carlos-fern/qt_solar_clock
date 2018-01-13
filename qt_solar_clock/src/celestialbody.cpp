@@ -8,15 +8,15 @@
 #include <QFile>
 
 
-CelestialBody::CelestialBody( QString bodyName, qreal size, qreal orbitalVelocity, QString trajectoryFilePath, QString imageFilePath){
+CelestialBody::CelestialBody( QString bodyName, qreal size, qreal orbitalVelocity, QString trajectoryFilePath, QColor bodyColor){
     vLoadTrajectory(trajectoryFilePath);
-    render = new QSvgRenderer(imageFilePath);
-    render->setViewBox(QRect(-size*kmToMKM/2, -size*kmToMKM/2, size*kmToMKM, size*kmToMKM));
     this->bodyName = bodyName;
     this->orbitalVelocity = orbitalVelocity;
     this->bodySize = size;
+    this->bodyColor = bodyColor;
 }
 CelestialBody::~CelestialBody(){
+    delete track;
 
 
 }
@@ -52,21 +52,14 @@ void  CelestialBody::vLoadTrajectory(QString filePath){
 
 void CelestialBody::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
                           QWidget *widget){
-    QColor color;
-    QBrush brush;
-    brush.setColor(Qt::blue);
     QPen pen;
-    pen.setColor(Qt::red);
+    pen.setColor(bodyColor);
     pen.setWidth(30);
     painter->setPen(pen);
     painter->setBrush(QBrush(pen.color()));
     painter->setRenderHint(QPainter::SmoothPixmapTransform, true);
     painter->setCompositionMode(QPainter::CompositionMode_Plus);
     painter->setRenderHint(QPainter::HighQualityAntialiasing,true);
-    //svg.setPos(this->scenePos());
-    //svg.setSharedRenderer(render);
-    //svg.setScale(5 );
-    //svg.paint(painter, option, widget);
     painter->drawEllipse(this->scenePos(),bodySize*kmToMKM, bodySize*kmToMKM);
 
 }

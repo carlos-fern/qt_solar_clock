@@ -13,6 +13,8 @@
 
 #include "celestialbody.h"
 
+
+
 class SolarSystem: public QGraphicsScene{
     Q_OBJECT
 public:
@@ -26,8 +28,7 @@ signals:
 
 private:
     void createScene();
-    QGraphicsSvgItem *Sun;
-    QGraphicsEllipseItem *sun;
+    QGraphicsEllipseItem *Sun;
     QPainterPathStroker strokedPath;
     QGraphicsItemGroup group;
     CelestialBody *Mercury;

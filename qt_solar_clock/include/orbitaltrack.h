@@ -14,6 +14,7 @@
 class ObritalTrack: public QObject, public QGraphicsItem {
     Q_OBJECT
     Q_PROPERTY(QPointF pos READ pos WRITE setPos)
+
 public:
     ObritalTrack(double min, double max);
     QRectF boundingRect() const override;

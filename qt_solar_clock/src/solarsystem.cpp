@@ -6,7 +6,6 @@
 #include <QPointF>
 #include "include/solarsystem.h"
 
-
 SolarSystem::SolarSystem(){
     //Configure Window
     QPalette pal = palette();
@@ -18,6 +17,7 @@ SolarSystem::SolarSystem(){
 
 
 SolarSystem::~SolarSystem(){
+    delete Sun;
     delete Mercury;
     delete Venus;
     delete Earth; // <-- :(
@@ -30,21 +30,21 @@ SolarSystem::~SolarSystem(){
 
 void SolarSystem::createScene(){
 
-    Mercury = new CelestialBody("Mercury", 4878, 47.4,"./heliocentric_trajectories/Mercury.lst", "./assets/mercury.svg");
-    Venus = new CelestialBody("Venus", 12104 ,35.0,"./heliocentric_trajectories/Venus.lst", "./assets/venus.svg");
-    Earth = new CelestialBody("Earth", 6794, 29.8, "./heliocentric_trajectories/Earth.lst", "./assets/earth.svg");
-    Mars = new CelestialBody("Mars", 6794, 24.1, "./heliocentric_trajectories/Mars.lst", "./assets/mars.svg");
-    Jupiter = new CelestialBody("Jupiter", 142984, 13.1, "./heliocentric_trajectories/Jupiter.lst", "./assets/jupiter.svg");
-    Saturn = new CelestialBody("Saturn", 120536, 9.7, "./heliocentric_trajectories/Saturn.lst", "./assets/saturn.svg");
-    Uranus = new CelestialBody("Uranus", 51118, 6.8, "./heliocentric_trajectories/Uranus.lst", "./assets/uranus.svg");
-    Neptune = new CelestialBody("Neptune",49532, 5.4, "./heliocentric_trajectories/Neptune.lst", "./assets/neptune.svg");
+    Mercury = new CelestialBody("Mercury", 4878, 47.4,"./heliocentric_trajectories/Mercury.lst", Qt::red);
+    Venus = new CelestialBody("Venus", 12104 ,35.0,"./heliocentric_trajectories/Venus.lst", Qt::red);
+    Earth = new CelestialBody("Earth", 6794, 29.8, "./heliocentric_trajectories/Earth.lst", Qt::red);
+    Mars = new CelestialBody("Mars", 6794, 24.1, "./heliocentric_trajectories/Mars.lst", Qt::red);
+    Jupiter = new CelestialBody("Jupiter", 142984, 13.1, "./heliocentric_trajectories/Jupiter.lst", Qt::red);
+    Saturn = new CelestialBody("Saturn", 120536, 9.7, "./heliocentric_trajectories/Saturn.lst" ,Qt::red);
+    Uranus = new CelestialBody("Uranus", 51118, 6.8, "./heliocentric_trajectories/Uranus.lst", Qt::red);
+    Neptune = new CelestialBody("Neptune",49532, 5.4, "./heliocentric_trajectories/Neptune.lst", Qt::red);
 
     QPen pen;
     pen.setColor(Qt::red);
     pen.setWidth(200);
-    sun = new QGraphicsEllipseItem(0.0,0.0, 1391400*.0001, 1391400*.0001);
-    sun->setPos(QPointF(0,0));
-    sun->setPen(pen);
+    Sun = new QGraphicsEllipseItem(0.0,0.0, 1391400*.0001, 1391400*.0001);
+    Sun->setPos(QPointF(0,0));
+    Sun->setPen(pen);
 
     //add tracks (lowest draw)
     this->addItem(Mercury->getTrjectory());
@@ -57,7 +57,7 @@ void SolarSystem::createScene(){
     this->addItem(Neptune->getTrjectory());
 
     //add bodies
-    this->addItem(sun);
+    this->addItem(Sun);
     this->addItem(Mercury);
     this->addItem(Venus);
     this->addItem(Earth);

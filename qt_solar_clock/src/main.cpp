@@ -3,7 +3,7 @@
 #include <QGraphicsView>
 #include <QTimer>
 #include <QOpenGLWidget>
-#include <include/solarsystem.h>
+#include "include/solarsystem.h"
 #include <QSlider>
 #include <QDockWidget>
 

@@ -1,12 +1,13 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+
 #include <QMainWindow>
 #include <QSlider>
 #include <QDockWidget>
 #include <QGraphicsView>
 #include <QTimer>
-#include <include/solarsystem.h>
+#include "solarsystem.h"
 namespace Ui {
 class MainWindow;
 }

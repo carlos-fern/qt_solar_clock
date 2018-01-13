@@ -1,7 +1,7 @@
-#include <include/orbitaltrack.h>
+#include "include/orbitaltrack.h"
 
 
-#define MAGIC_BOUNDING_BOX 8000000 //<---- Trick to keep all the circles rendered when scrolling.  Must be a better way..
+#define MAGIC_BOUNDING_BOX 8000000 //<---- Trick to keep all the circles rendered when scrolling.
 
 ObritalTrack::ObritalTrack(double min, double max){
 

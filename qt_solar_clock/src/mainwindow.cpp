@@ -8,7 +8,8 @@
 #include <QGraphicsView>
 #include <QTimer>
 #include <QDebug>
-#include <include/solarsystem.h>
+#include "include/solarsystem.h"
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -21,6 +22,13 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete timeWarpSlider;
+    delete timeWarpSliderDock;
+    delete tiltSlider;
+    delete tiltSliderDock;
+    delete zoomSlider;
+    delete zoomSliderDock;
+    delete solarViewer;
 }
 
 
