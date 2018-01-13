@@ -42,9 +42,9 @@ void MainWindow::createInteractive(){
     timeWarpSlider->setInvertedAppearance(false);
     timeWarpSlider->setInvertedControls(false);
     timeWarpSlider->setFixedSize(sliderSize);
-    timeWarpSlider->setMinimum(-100);
+    timeWarpSlider->setMinimum(-300);
     timeWarpSlider->setMaximum(-10);
-    timeWarpSlider->setValue(-100);
+    timeWarpSlider->setValue(-300);
 
     tiltSlider = new QSlider;
     tiltSlider->setInvertedAppearance(false);
@@ -106,16 +106,15 @@ void MainWindow::createInteractive(){
     solarViewer->resetMatrix();
 
     this->setCentralWidget(solarViewer);
+
     this->showMaximized();
-    this->setZoomValue(zoom);
+    this->setTiltValue(30);
+
     QObject::connect(&timer, SIGNAL(timeout()), &solarSytem, SLOT(advance()));
     timer.start(1000/66);
 }
 
 void MainWindow::setTiltValue(int scale){
-    if(scale ==  30) //<--- HACK: 2-29 result in the trajectoreis disapearing
-        scale =1;
-
     QTransform trans;
     tilt = scale;
     trans.rotate(tilt, Qt::XAxis);

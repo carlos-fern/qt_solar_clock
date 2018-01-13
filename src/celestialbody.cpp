@@ -55,12 +55,13 @@ void CelestialBody::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
     QPen pen;
     pen.setColor(bodyColor);
     pen.setWidth(30);
+    painter->save();
     painter->setPen(pen);
     painter->setBrush(QBrush(pen.color()));
     painter->setRenderHint(QPainter::SmoothPixmapTransform, true);
-    painter->setCompositionMode(QPainter::CompositionMode_Plus);
     painter->setRenderHint(QPainter::HighQualityAntialiasing,true);
     painter->drawEllipse(this->scenePos(),bodySize*kmToMKM, bodySize*kmToMKM);
+    painter->restore();
 
 }
 

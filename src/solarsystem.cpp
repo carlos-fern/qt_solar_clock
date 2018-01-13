@@ -30,18 +30,19 @@ SolarSystem::~SolarSystem(){
 
 void SolarSystem::createScene(){
 
-    Mercury = new CelestialBody("Mercury", 4878, 47.4,"./heliocentric_trajectories/Mercury.lst", Qt::red);
-    Venus = new CelestialBody("Venus", 12104 ,35.0,"./heliocentric_trajectories/Venus.lst", Qt::red);
-    Earth = new CelestialBody("Earth", 6794, 29.8, "./heliocentric_trajectories/Earth.lst", Qt::red);
-    Mars = new CelestialBody("Mars", 6794, 24.1, "./heliocentric_trajectories/Mars.lst", Qt::red);
-    Jupiter = new CelestialBody("Jupiter", 142984, 13.1, "./heliocentric_trajectories/Jupiter.lst", Qt::red);
-    Saturn = new CelestialBody("Saturn", 120536, 9.7, "./heliocentric_trajectories/Saturn.lst" ,Qt::red);
-    Uranus = new CelestialBody("Uranus", 51118, 6.8, "./heliocentric_trajectories/Uranus.lst", Qt::red);
-    Neptune = new CelestialBody("Neptune",49532, 5.4, "./heliocentric_trajectories/Neptune.lst", Qt::red);
+    Mercury = new CelestialBody("Mercury", 4878, 47.4,"./heliocentric_trajectories/Mercury.lst", QColor(110,110,110));
+    Venus = new CelestialBody("Venus", 12104 ,35.0,"./heliocentric_trajectories/Venus.lst", QColor(255,157,95));
+    Earth = new CelestialBody("Earth", 6794, 29.8, "./heliocentric_trajectories/Earth.lst", QColor(67,123,255));
+    Mars = new CelestialBody("Mars", 6794, 24.1, "./heliocentric_trajectories/Mars.lst", QColor(255,99,46));
+    Jupiter = new CelestialBody("Jupiter", 142984, 13.1, "./heliocentric_trajectories/Jupiter.lst", QColor(172,117,105));
+    Saturn = new CelestialBody("Saturn", 120536, 9.7, "./heliocentric_trajectories/Saturn.lst" , QColor(172,123,72));
+    Uranus = new CelestialBody("Uranus", 51118, 6.8, "./heliocentric_trajectories/Uranus.lst", QColor(82,204,255));
+    Neptune = new CelestialBody("Neptune",49532, 5.4, "./heliocentric_trajectories/Neptune.lst", QColor(51,78,169));
 
     QPen pen;
     pen.setColor(Qt::red);
     pen.setWidth(200);
+    pen.setBrush(QBrush(pen.color()));
     Sun = new QGraphicsEllipseItem(0.0,0.0, 1391400*.0001, 1391400*.0001);
     Sun->setPos(QPointF(0,0));
     Sun->setPen(pen);

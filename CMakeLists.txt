@@ -11,7 +11,7 @@ find_package(Qt5 REQUIRED COMPONENTS Widgets Core Gui Svg OpenGL)
 
 include_directories("${PROJECT_SOURCE_DIR}/include")
 
-qt5_wrap_ui(SOURCES mainwindow.ui) 
+qt5_wrap_ui(UI_HEADERS src/mainwindow.ui) 
 
 set(SOURCES
 src/main.cpp 
@@ -23,7 +23,7 @@ src/solarsystem.cpp
 
 qt5_wrap_cpp(SOURCES include/celestialbody.h include/orbitaltrack.h include/solarsystem.h include/mainwindow.h)
 
-add_executable(qt_solar_clock ${SOURCES})
+add_executable(qt_solar_clock ${SOURCES} ${UI_HEADERS})
 
 set_target_properties(qt_solar_clock PROPERTIES AUTOMOC TRUE)
 

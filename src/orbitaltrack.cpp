@@ -11,18 +11,17 @@ ObritalTrack::ObritalTrack(double min, double max){
 
 void ObritalTrack::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
                          QWidget *widget){
-
-    QColor color;
-    QBrush brush;
-    brush.setColor(Qt::blue);
     QPen pen;
-    pen.setColor(Qt::blue);
-    pen.setWidth(180);
+    pen.setColor(QColor(165,169,162));
+    pen.setWidth(100);
     pen.setCapStyle(Qt::FlatCap);
+    pen.setStyle(Qt::DotLine);
+    painter->save();
     painter->setPen(pen);
     painter->setRenderHint(QPainter::SmoothPixmapTransform, true);
     painter->setRenderHint(QPainter::HighQualityAntialiasing, true);
     painter->drawEllipse(this->scenePos(), min ,max);
+    painter->restore();
 }
 
 QRectF ObritalTrack::boundingRect() const {

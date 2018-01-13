@@ -33,8 +33,8 @@ protected:
 private:
     int distanceScale = 1500; //150millionkm = 1au
     qreal kmToMKM = .001;
-    qreal movementScale = 10000.0;
-    int simStepScale = 10;
+    qreal movementScale = 30000.0;
+    int simStepScale = 100;
 
     qreal orbitalVelocity;
     std::vector<double> distanceMeasurements;
