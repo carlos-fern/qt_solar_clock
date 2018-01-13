@@ -21,7 +21,6 @@ public:
     ~MainWindow();
 
 public slots:
-    void setTimeWarpSacle(int scale);
     void setTiltValue(int scale);
     void setPanValue(int scale);
     void setZoomValue(int scale);
@@ -44,6 +43,7 @@ private:
     QDockWidget *panSliderDock;
     QDockWidget *zoomSliderDock;
     QTimer timer;
+    qreal visualScale=.00000001;
     int zoom= 4;
     int tilt =0;
 

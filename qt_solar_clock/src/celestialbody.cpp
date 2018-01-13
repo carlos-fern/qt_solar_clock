@@ -60,12 +60,13 @@ void CelestialBody::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
     pen.setWidth(30);
     painter->setPen(pen);
     painter->setBrush(QBrush(pen.color()));
-    painter->setRenderHint(QPainter::HighQualityAntialiasing);
+    painter->setRenderHint(QPainter::SmoothPixmapTransform, true);
+    painter->setCompositionMode(QPainter::CompositionMode_Plus);
+    painter->setRenderHint(QPainter::HighQualityAntialiasing,true);
     //svg.setPos(this->scenePos());
-    svg.setSharedRenderer(render);
-    svg.setScale(5 );
+    //svg.setSharedRenderer(render);
+    //svg.setScale(5 );
     //svg.paint(painter, option, widget);
-
     painter->drawEllipse(this->scenePos(),bodySize*kmToMKM, bodySize*kmToMKM);
 
 }

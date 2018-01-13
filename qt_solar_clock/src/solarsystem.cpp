@@ -13,7 +13,7 @@ SolarSystem::SolarSystem(){
     pal.setColor(QPalette::Background, Qt::black);
     this->setPalette(pal);
     this->createScene();
-    this->setSceneRect(-1024*100, -768*100, 2048*100, 1536*100);
+    this->setSceneRect(-1024*100, -768*100, 2048*100, 1536*100); //large values to keep the GraphicsViwer happy with the internl scene.
 }
 
 
@@ -28,15 +28,7 @@ SolarSystem::~SolarSystem(){
     delete Neptune;
 }
 
-//150 Millonkm == 1 au
 void SolarSystem::createScene(){
-    QSvgRenderer *render = new QSvgRenderer(QLatin1String("./assets/sun.svg"));
-    //render->setViewBox(QRect(78.5, 78.5, 78.5,78.5));
-    //QScale
-    Sun = new QGraphicsSvgItem();
-    Sun->setPos(-39.25, -39.25);
-    Sun->setSharedRenderer(render);
-    Sun->setScale(.001 * 109);
 
     Mercury = new CelestialBody("Mercury", 4878, 47.4,"./heliocentric_trajectories/Mercury.lst", "./assets/mercury.svg");
     Venus = new CelestialBody("Venus", 12104 ,35.0,"./heliocentric_trajectories/Venus.lst", "./assets/venus.svg");
@@ -46,16 +38,13 @@ void SolarSystem::createScene(){
     Saturn = new CelestialBody("Saturn", 120536, 9.7, "./heliocentric_trajectories/Saturn.lst", "./assets/saturn.svg");
     Uranus = new CelestialBody("Uranus", 51118, 6.8, "./heliocentric_trajectories/Uranus.lst", "./assets/uranus.svg");
     Neptune = new CelestialBody("Neptune",49532, 5.4, "./heliocentric_trajectories/Neptune.lst", "./assets/neptune.svg");
+
     QPen pen;
     pen.setColor(Qt::red);
     pen.setWidth(200);
-
     sun = new QGraphicsEllipseItem(0.0,0.0, 1391400*.0001, 1391400*.0001);
     sun->setPos(QPointF(0,0));
     sun->setPen(pen);
-
-
-
 
     //add tracks (lowest draw)
     this->addItem(Mercury->getTrjectory());
