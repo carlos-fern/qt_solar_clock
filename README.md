@@ -1,13 +1,13 @@
 # qt_solar_clock
-##Description
+## Description
 A Simple solar cock based on Qt5 OpenGLWidgets
 
-##Features
+## Features
 -Zoom
 -Tilt
 -Sim speed control
 
-##Build & Run
+## Build & Run
 - mkdir ./build
 - cd ./build
 - cmake ..
@@ -15,6 +15,6 @@ A Simple solar cock based on Qt5 OpenGLWidgets
 - cd ./.
 - ./qt_solar_clock
 
-##Dependencies
+## Dependencies
 QT5
 CMake >= 2.8.11
