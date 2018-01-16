@@ -66,6 +66,10 @@ cd $QT_DIR/proto
 (./autogen.sh)
 make install  
 
+cd $QT_DIR/libxcb
+(./autogen.sh)
+make install 
+
 cd $QT_DIR/qt-everywhere-opensource-src-5.5.0/qtbase/
 echo "Building Qt 5.5"
 ./configure -opensource -nomake examples -nomake tests -confirm-license -qt-xcb
