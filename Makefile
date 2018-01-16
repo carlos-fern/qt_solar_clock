@@ -6,14 +6,10 @@ DEFINES :=  -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED
 CFLAGS  :=  -g -Wall $(DEFINES)
 CXXFLAGS:=  $(CFLAGS) -std=c++11 -fPIC
 
-ifneq ($(BUILD),$(notdir $(CURDIR)))
-INCPATHS:=  -I. -isystem $(CURDIR)/build/qt_resources/qt-everywhere-opensource-src-5.5.0/qtbase/ -isystem $(CURDIR)/qt_resources/qt-everywhere-opensource-src-5.5.0/qtbase/include/  -isystem $(CURDIR)/qt_resources/qt-everywhere-opensource-src-5.5.0/qtbase/include/QtOpenGL -isystem $(CURDIR)/qt_resources/qt-everywhere-opensource-src-5.5.0/qtbase/include/QtWidgets  -isystem $(CURDIR)/qt_resources/qt-everywhere-opensource-src-5.5.0/qtbase/include/QtGui -isystem $(CURDIR)/qt_resources/qt-everywhere-opensource-src-5.5.0/qtbase/include/QtCore -isystem $(CURDIR)/qt_resources/qt-everywhere-opensource-src-5.5.0/qtbase/mkspecs/linux-g++-64
-else
-INCPATHS:=  -I. -isystem $(CURDIR)/qt_resources/qt-everywhere-opensource-src-5.5.0/qtbase/ -isystem $(CURDIR)/qt_resources/qt-everywhere-opensource-src-5.5.0/qtbase/include/  -isystem $(CURDIR)/qt_resources/qt-everywhere-opensource-src-5.5.0/qtbase/include/QtOpenGL -isystem $(CURDIR)/qt_resources/qt-everywhere-opensource-src-5.5.0/qtbase/include/QtWidgets  -isystem $(CURDIR)/qt_resources/qt-everywhere-opensource-src-5.5.0/qtbase/include/QtGui -isystem $(CURDIR)/qt_resources/qt-everywhere-opensource-src-5.5.0/qtbase/include/QtCore -isystem $(CURDIR)/qt_resources/qt-everywhere-opensource-src-5.5.0/qtbase/mkspecs/linux-g++-64
-endif
+INCPATHS:=  -I. -isystem /usr/local/Qt-5.5.0/ -isystem /usr/local/Qt-5.5.0/include/  -isystem /usr/local/Qt-5.5.0/include/QtOpenGL -isystem /usr/local/Qt-5.5.0/include/QtWidgets  -isystem /usr/local/Qt-5.5.0/include/QtGui -isystem /usr/local/Qt-5.5.0/include/QtCore -isystem /usr/local/Qt-5.5.0/mkspecs/linux-g++-64
+LDFLAGS :=  -g -Wl,-rpath,/usr/local/Qt-5.5.0/lib
+export LD_LIBRARY_PATH=/usr/local/Qt-5.5.0/qtbase/lib
 
-LDFLAGS :=  -g -Wl,-rpath,$(CURDIR)/qt_resources/qt-everywhere-opensource-src-5.5.0/qtbase/lib
-export LD_LIBRARY_PATH=$(CURDIR)/qt_resources/qt-everywhere-opensource-src-5.5.0/qtbase/lib
 
 LIBS    :=  -lQt5Gui -lQt5Widgets -lQt5Core -lQt5OpenGL -lpthread
 TARGET  :=  qt_solar_clock
