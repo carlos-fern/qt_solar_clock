@@ -12,7 +12,6 @@ A Simple solar cock based on Qt5 OpenGLWidgets. Uses [NASA reference data](https
 ### Script (QT5 Provided)
 - sudo chmod +x builder.sh
 - sudo ./builder.sh
-- ./qt_solar_clock
 
 ### Cmake (QT5 Assumed)
 - mkdir ./build
