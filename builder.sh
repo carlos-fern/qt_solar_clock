@@ -11,10 +11,10 @@ if [ ! -d "qt-everywhere-opensource-src-5.5.0" ]; then
 	tar -xzvf qt-everywhere-opensource-src-5.5.0.tar.gz
 fi
 
-if [ ! -d "autoconf-latest" ]; then
+if [ ! -d "autoconf-2.69.tar.xz" ]; then
 	echo "Downloading autoconf"
-	wget "http://ftp.gnu.org/gnu/autoconf/autoconf-latest.tar.gz"
-	tar -xvf autoconf-latest.tar.gz
+	wget "http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.xz"
+	tar -xvf autoconf-2.69.tar.xz
 fi
 
 
@@ -42,7 +42,7 @@ if [ ! -d "libxcb" ]; then
 	git clone "git://anongit.freedesktop.org/git/xcb/libxcb"
 fi
 
-cd autoconf-latest
+cd autoconf-2.69.tar.xz
 ./configure
 make install
 
