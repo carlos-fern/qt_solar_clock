@@ -5,12 +5,8 @@
 #include <QPainter>
 #include <QGraphicsScene>
 #include <QXmlStreamReader>
-
-#include <QtSvg/QGraphicsSvgItem>
 #include <QPainterPathStroker>
-
 #include <QFile>
-
 #include "celestialbody.h"
 
 

@@ -1,4 +1,4 @@
-#include "include/mainwindow.h"
+#include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QLatin1String>
 #include <QString>
@@ -8,7 +8,7 @@
 #include <QGraphicsView>
 #include <QTimer>
 #include <QDebug>
-#include "include/solarsystem.h"
+
 
 
 MainWindow::MainWindow(QWidget *parent) :

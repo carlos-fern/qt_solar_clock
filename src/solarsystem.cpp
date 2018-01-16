@@ -1,10 +1,9 @@
 #include <QPainter>
-#include <QtSvg/QSvgRenderer>
 #include <QGraphicsView>
 #include <QTimer>
 #include <QTime>
 #include <QPointF>
-#include "include/solarsystem.h"
+#include "solarsystem.h"
 
 SolarSystem::SolarSystem(){
     //Configure Window

@@ -1,9 +1,9 @@
-#include "include/mainwindow.h"
+#include "mainwindow.h"
 #include <QApplication>
 #include <QGraphicsView>
 #include <QTimer>
 #include <QOpenGLWidget>
-#include "include/solarsystem.h"
+#include "solarsystem.h"
 #include <QSlider>
 #include <QDockWidget>
 

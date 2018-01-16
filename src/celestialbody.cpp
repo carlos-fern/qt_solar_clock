@@ -1,4 +1,4 @@
-#include "include/celestialbody.h"
+#include "celestialbody.h"
 #include <QPropertyAnimation>
 #include <QDebug>
 #include <QtMath>

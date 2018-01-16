@@ -4,8 +4,6 @@
 #include <QGraphicsObject>
 #include <QPropertyAnimation>
 #include <stdint.h>
-#include <QtSvg/QSvgRenderer>
-#include <QtSvg/QGraphicsSvgItem>
 #include "orbitaltrack.h"
 
 
