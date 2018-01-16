@@ -8,7 +8,9 @@ CXXFLAGS:=  $(CFLAGS) -std=c++11 -fPIC
 
 INCPATHS:=  -I. -isystem /usr/local/Qt-5.5.0/ -isystem /usr/local/Qt-5.5.0/include/  -isystem /usr/local/Qt-5.5.0/include/QtOpenGL -isystem /usr/local/Qt-5.5.0/include/QtWidgets  -isystem /usr/local/Qt-5.5.0/include/QtGui -isystem /usr/local/Qt-5.5.0/include/QtCore -isystem /usr/local/Qt-5.5.0/mkspecs/linux-g++-64
 LDFLAGS :=  -g -Wl,-rpath,/usr/local/Qt-5.5.0/lib
-export LD_LIBRARY_PATH=/usr/local/Qt-5.5.0/qtbase/lib
+export LIBRARY_PATH = /usr/local/Qt-5.5.0/lib
+export LD_LIBRARY_PATH=/usr/local/Qt-5.5.0/lib
+
 
 
 LIBS    :=  -lQt5Gui -lQt5Widgets -lQt5Core -lQt5OpenGL -lpthread
@@ -54,12 +56,6 @@ all: $(OUTPUT)
 $(OUTPUT): $(OFILES)
 	@echo built ... $(notdir $@)
 	@$(LD) $(LDFLAGS) $(OFILES) -o $@ $(LIBS)
-
-#---------------------------------------------------------------------------------
-%.o: %.c
-#---------------------------------------------------------------------------------
-	@echo $(notdir $<)
-	@$(C) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 #---------------------------------------------------------------------------------
 %.o: %.cpp

@@ -42,7 +42,7 @@ if [ ! -d "libxcb" ]; then
 	git clone "git://anongit.freedesktop.org/git/xcb/libxcb"
 fi
 
-cd autoconf-2.69.tar.xz
+cd autoconf-2.69
 ./configure
 make install
 
