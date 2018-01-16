@@ -11,8 +11,6 @@ LDFLAGS :=  -g -Wl,-rpath,/usr/local/Qt-5.5.0/lib
 export LIBRARY_PATH = /usr/local/Qt-5.5.0/lib
 export LD_LIBRARY_PATH=/usr/local/Qt-5.5.0/lib
 
-
-
 LIBS    :=  -lQt5Gui -lQt5Widgets -lQt5Core -lQt5OpenGL -lpthread
 TARGET  :=  qt_solar_clock
 BUILD   :=  build
