@@ -22,5 +22,6 @@ A Simple solar cock based on Qt5 OpenGLWidgets. Uses [NASA reference data](https
 - ./qt_solar_clock
 
 ## Dependencies
+- Ubuntu 16.04
 - QT5
 - CMake >= 2.8.11
