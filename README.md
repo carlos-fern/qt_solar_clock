@@ -1,4 +1,4 @@
-# qt_solar_cl
+# qt_solar_clock
 ## Description
 A Simple solar cock based on Qt5 OpenGLWidgets. Uses [NASA reference data](https://omniweb.gsfc.nasa.gov/coho/helios/planet.html)
 
