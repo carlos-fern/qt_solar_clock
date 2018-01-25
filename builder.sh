@@ -11,12 +11,24 @@ if [ ! -d "qt-everywhere-opensource-src-5.5.0" ]; then
 	tar -xzvf qt-everywhere-opensource-src-5.5.0.tar.gz
 fi
 
-if [ ! -d "autoconf-2.69.tar.xz" ]; then
+
+if [ ! -d "m4-1.4.18"] then 
+	wget"https://mirrors.peers.community/mirrors/gnu/m4/m4-1.4.18.tar.gz"
+	tar -xzvf m4-1.4.18.tar.gz
+fi 
+
+
+if [! -d "automake-1.15.1"] then 
+ 	wget "ftp://ftp.gnu.org/gnu/automake/automake-1.15.1.tar.gz"
+ 	tar -xzvf automake-1.15.1.tar.gz
+fi
+
+
+if [ ! -d "autoconf-2.69" ]; then
 	echo "Downloading autoconf"
 	wget "http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.xz"
 	tar -xvf autoconf-2.69.tar.xz
 fi
-
 
 if [ ! -d "macros" ]; then
 	git clone "git://anongit.freedesktop.org/git/xorg/util/macros"
@@ -42,7 +54,15 @@ if [ ! -d "libxcb" ]; then
 	git clone "git://anongit.freedesktop.org/git/xcb/libxcb"
 fi
 
-cd autoconf-2.69
+cd m4-1.4.18
+./configure
+make install
+
+cd $QT_DIR/automake-1.15.1
+./configure
+make install
+
+cd $QT_DIR/autoconf-2.69
 ./configure
 make install
 

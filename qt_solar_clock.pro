@@ -4,9 +4,9 @@
 #
 #-------------------------------------------------
 
-QT       += core  
+QT       += core gui  
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += opengl core widgets svg
+greaterThan(QT_MAJOR_VERSION, 4): QT += opengl core widgets gui 
 
 TARGET = qt_solar_clock
 TEMPLATE = app
