@@ -9,19 +9,27 @@ A Simple solar cock based on Qt5 OpenGLWidgets. Uses [NASA reference data](https
 
 ## Build & Run
 
-### Script (QT5 Provided)
-- sudo chmod +x builder.sh
-- sudo ./builder.sh
-
-### Cmake (QT5 Assumed)
+### Cmake (QT5.5 Provided)
+- sudo chmod +x solar_launcher.sh
 - mkdir ./build
 - cd ./build
 - cmake ..
 - make 
-- cd ./.
-- ./qt_solar_clock
+- (Go for a walk, 30min+ build-time)
+- cd ../
+- ./solar_launcher.sh
+
+### Script (QT5 Provided)
+- sudo chmod +x builder.sh
+- sudo ./builder.sh
 
 ## Dependencies
 - Ubuntu 16.04
-- QT5
+- G++
+- Build-Essential
 - CMake >= 2.8.11
+
+## System Requirements
+- 4GB+ Free space
+- GPU (Recommended) 
+
