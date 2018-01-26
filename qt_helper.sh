@@ -8,4 +8,4 @@ xcb=$6
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:${pkgconfig_path}"
 export LIBRARY_PATH="${LIBRARY_PATH}:${libs}"
 export CPLUS_INCLUDE_PATH="${CPLUS_INCLUDE_PATH}:${xcb}:${include}"
-cd ${source_dir}/ && ./configure -I "${xcb}"  -L "${libs}" -R "${libs}"  -opensource -confirm-license -gui  -xcb -linuxfb -widgets -no-compile-examples -opengl -system-xcb  -release -xcb-xlib -system-pcre -no-alsa  -no-pulseaudio -no-openssl -no-xkbcommon-evdev -qt-zlib -no-dbus -no-harfbuzz -system-freetype && make
+cd ${source_dir}/ && ./configure -I "${xcb}"  -L "${libs}" -R "${libs}"  -opensource -confirm-license -gui  -xcb -linuxfb -widgets -no-compile-examples -opengl -system-xcb  -release -xcb-xlib -system-pcre -no-alsa  -no-pulseaudio -no-openssl -skip qtconnectivity -skip qtactiveqt -skip qtwebkit -skip qtwebkit-examples -skip qtwebsockets -skip qtwinextras -skip qtwayland -skip qtsensors -skip qtmultimedia -skip qtdoc -skip qtandroidextras -no-qml-debug -no-largefile -no-gif -no-libproxy -no-xkbcommon-evdev -qt-zlib -no-dbus -no-harfbuzz -system-freetype -no-slog2 -no-pps -no-imf  -no-lgmon -no-android-style-assets  && make
