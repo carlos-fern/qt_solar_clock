@@ -7,15 +7,12 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../)
 
-
 #################################################################################################################################
 # set include paths
 #################################################################################################################################
-set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/xproto-7.0.31/include")
-set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/libXau-1.0.8/include")
-set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/libpthread-stubs-0.4/include")
-set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/xcb-proto-1.12/include")
+set( INCLUDE_DIRS "${CMAKE_CURRENT_BINARY_DIR}/xproto-7.0.31/include")
 set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/libxcb-1.12/include")
+set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/libXau-1.0.8/include")
 set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/libX11-1.6.5/include")
 set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/xextproto-7.3.0/include")
 set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/inputproto-2.3/include")
@@ -36,15 +33,20 @@ set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/libxshmfence-1.2/
 set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/expat-2.0.1/include")
 set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/pcre-8.41/include")
 set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/freetype-2.9/include")
-set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/xcb-util-wm-0.4.1/include")
-set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/m4-1.4/include")
+set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/freetype-2.9/include/freetype2/")
+set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/xcb-util-wm-0.4.0/include")
+set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/m4-1.4.18/include")
 set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/xcb-util-0.4.0/include")
 set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/util-macros-1.19.1/include")
+set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/xcb-util-image-0.4.0/include")
+set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/xcb-util-keysyms-0.4.0/include")
+set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/xcb-util-renderutil-0.3.9/include")
+set( INCLUDE_DIRS "${INCLUDE_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/libxkbcommon-0.7.0/include")
 
 #################################################################################################################################
 # Set library paths
 #################################################################################################################################
-set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/xproto-7.0.31/lib" )
+set( LIB_DIRS "${CMAKE_CURRENT_BINARY_DIR}/xproto-7.0.31/lib" )
 set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/libXau-1.0.8/lib" )
 set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/libpthread-stubs-0.4/lib" )
 set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/xcb-proto-1.12/lib")
@@ -66,13 +68,15 @@ set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/libXdamage-1.1/lib" )
 set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/fixesproto-5.0/lib" )
 set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/damageproto-1.2./lib" )
 set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/libxshmfence-1.2/lib" )
-set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/expat-2.0.1/lib ")
-set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/pcre-8.41/lib ")
-set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/freetype-2.9/lib ")
-set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/xcb-util-wm-0.4.1/lib ")
-set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/m4-1.4/lib" )
-set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/xcb-util-0.4.0/lib ")
+set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/expat-2.0.1/lib")
+set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/pcre-8.41/lib")
+set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/freetype-2.9/lib")
+set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/xcb-util-wm-0.4.0/lib")
+set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/m4-1.4.18/lib" )
+set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/xcb-util-0.4.0/lib")
 set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/util-macros-1.19.1/lib" )
+set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/xcb-util-image-0.4.0/lib" )
+set( LIB_DIRS "${LIB_DIRS}:${CMAKE_CURRENT_BINARY_DIR}/xcb-util-keysyms-0.4.0/lib" )
 
 #################################################################################################################################
 # Set pkg config paths
@@ -103,17 +107,20 @@ set( ENV{PKG_CONFIG_PATH} "$ENV{PKG_CONFIG_PATH}:${CMAKE_CURRENT_BINARY_DIR}/exp
 set( ENV{PKG_CONFIG_PATH} "$ENV{PKG_CONFIG_PATH}:${CMAKE_CURRENT_BINARY_DIR}/pcre-8.41/lib/pkgconfig/" )
 set( ENV{PKG_CONFIG_PATH} "$ENV{PKG_CONFIG_PATH}:${CMAKE_CURRENT_BINARY_DIR}/freetype-2.9/lib/pkgconfig/" )
 set( ENV{PKG_CONFIG_PATH} "$ENV{PKG_CONFIG_PATH}:${CMAKE_CURRENT_BINARY_DIR}/xcb-util-wm-0.4.1/lib/pkgconfig/" )
-set( ENV{PKG_CONFIG_PATH} "$ENV{PKG_CONFIG_PATH}:${CMAKE_CURRENT_BINARY_DIR}/m4-1.4/lib/pkgconfig/" )
+set( ENV{PKG_CONFIG_PATH} "$ENV{PKG_CONFIG_PATH}:${CMAKE_CURRENT_BINARY_DIR}/m4-1.4.18/lib/pkgconfig/" )
 set( ENV{PKG_CONFIG_PATH} "$ENV{PKG_CONFIG_PATH}:${CMAKE_CURRENT_BINARY_DIR}/xcb-util-0.4.0/lib/pkgconfig/" )
 set( ENV{PKG_CONFIG_PATH} "$ENV{PKG_CONFIG_PATH}:${CMAKE_CURRENT_BINARY_DIR}/util-macros-1.19.1/share/pkgconfig/" )
+set( ENV{PKG_CONFIG_PATH} "$ENV{PKG_CONFIG_PATH}:${CMAKE_CURRENT_BINARY_DIR}/libxkbcommon-0.7.0/lib/pkgconfig/" )
+set( ENV{PKG_CONFIG_PATH} "$ENV{PKG_CONFIG_PATH}:${CMAKE_CURRENT_BINARY_DIR}/m4-1.4.18/lib/pkgconfig/" )
 
 #################################################################################################################################
-# set m4 bin path
+# set bin paths
 #################################################################################################################################
-set (M4_BIN_PATH "${CMAKE_CURRENT_BINARY_DIR}/m4-1.4/bin")
+set (M4_BIN_PATH "${CMAKE_CURRENT_BINARY_DIR}/m4-1.4.18/bin")
+set (BISON_BIN_PATH "${CMAKE_CURRENT_BINARY_DIR}/bison-3.0.4/bin")
 
 #################################################################################################################################
-# Get libxcb and it's dependencies
+# Get and  compile dependencies and project
 #################################################################################################################################
 ExternalProject_Add(util-macros
   URL https://www.x.org/archive/individual/util/util-macros-1.19.1.tar.gz
@@ -139,12 +146,51 @@ ExternalProject_Add(libXau
   INSTALL_COMMAND echo "NONE"
 )
 
-
 ExternalProject_Add(libxcb
   URL https://xcb.freedesktop.org/dist/libxcb-1.12.tar.gz
   PREFIX ${CMAKE_CURRENT_BINARY_DIR}/libxcb-1.12
      CONFIGURE_COMMAND echo "NONE"
   BUILD_COMMAND sh "${CMAKE_SOURCE_DIR}/helper.sh" "${CMAKE_CURRENT_BINARY_DIR}/libxcb-1.12/src/libxcb;$ENV{PKG_CONFIG_PATH};${CMAKE_CURRENT_BINARY_DIR}/libxcb-1.12"
+  INSTALL_COMMAND echo "NONE"
+)
+
+ExternalProject_Add(xcb-util-image
+  URL https://xcb.freedesktop.org/dist/xcb-util-image-0.4.0.tar.gz
+  PREFIX ${CMAKE_CURRENT_BINARY_DIR}/xcb-util-image-0.4.0
+  CONFIGURE_COMMAND echo "NONE"
+  BUILD_COMMAND sh "${CMAKE_SOURCE_DIR}/helper.sh" "${CMAKE_CURRENT_BINARY_DIR}/xcb-util-image-0.4.0/src/xcb-util-image;$ENV{PKG_CONFIG_PATH};${CMAKE_CURRENT_BINARY_DIR}/xcb-util-image-0.4.0"
+  INSTALL_COMMAND echo "NONE"
+)
+
+ExternalProject_Add(bison
+  URL https://ftp.gnu.org/gnu/bison/bison-3.0.4.tar.xz
+  PREFIX ${CMAKE_CURRENT_BINARY_DIR}/bison-3.0.4
+  CONFIGURE_COMMAND echo "NONE"
+  BUILD_COMMAND sh "${CMAKE_SOURCE_DIR}/helper.sh" "${CMAKE_CURRENT_BINARY_DIR}/bison-3.0.4/src/bison;$ENV{PKG_CONFIG_PATH};${CMAKE_CURRENT_BINARY_DIR}/bison-3.0.4"
+  INSTALL_COMMAND echo "NONE"
+)
+
+ExternalProject_Add(libxkbcommon
+  URL http://xkbcommon.org/download/libxkbcommon-0.7.0.tar.xz
+  PREFIX ${CMAKE_CURRENT_BINARY_DIR}/libxkbcommon-0.7.0
+  CONFIGURE_COMMAND echo "NONE"
+  BUILD_COMMAND sh "${CMAKE_SOURCE_DIR}/xkbcommon-help.sh" "${CMAKE_CURRENT_BINARY_DIR}/libxkbcommon-0.7.0/src/libxkbcommon;$ENV{PKG_CONFIG_PATH};${CMAKE_CURRENT_BINARY_DIR}libxkbcommon-0.7.0;${INCLUDE_DIRS};${M4_BIN_PATH};${BISON_BIN_PATH}"
+  INSTALL_COMMAND echo "NONE"
+)
+
+ExternalProject_Add(xcb-util-renderutil
+  URL https://xcb.freedesktop.org/dist/xcb-util-renderutil-0.3.9.tar.gz
+  PREFIX ${CMAKE_CURRENT_BINARY_DIR}/xcb-util-renderutil-0.3.9
+  CONFIGURE_COMMAND echo "NONE"
+  BUILD_COMMAND sh "${CMAKE_SOURCE_DIR}/helper.sh" "${CMAKE_CURRENT_BINARY_DIR}/xcb-util-renderutil-0.3.9/src/xcb-util-renderutil;$ENV{PKG_CONFIG_PATH};${CMAKE_CURRENT_BINARY_DIR}/xcb-util-renderutil-0.3.9"
+  INSTALL_COMMAND echo "NONE"
+)
+
+ExternalProject_Add(xcb-util-keysyms
+  URL https://xcb.freedesktop.org/dist/xcb-util-keysyms-0.4.0.tar.gz
+  PREFIX ${CMAKE_CURRENT_BINARY_DIR}/xcb-util-keysyms-0.4.0
+  CONFIGURE_COMMAND echo "NONE"
+  BUILD_COMMAND sh "${CMAKE_SOURCE_DIR}/helper.sh" "${CMAKE_CURRENT_BINARY_DIR}/xcb-util-keysyms-0.4.0/src/xcb-util-keysyms;$ENV{PKG_CONFIG_PATH};${CMAKE_CURRENT_BINARY_DIR}/xcb-util-keysyms-0.4.0"
   INSTALL_COMMAND echo "NONE"
 )
 
@@ -155,7 +201,6 @@ ExternalProject_Add(xcb-util
   BUILD_COMMAND sh "${CMAKE_SOURCE_DIR}/helper.sh" "${CMAKE_CURRENT_BINARY_DIR}/xcb-util-0.4.0/src/xcb-util;$ENV{PKG_CONFIG_PATH};${CMAKE_CURRENT_BINARY_DIR}/xcb-util-0.4.0"
   INSTALL_COMMAND echo "NONE"
 )
-
 
 ExternalProject_Add(xcb-util-wm
   URL https://xcb.freedesktop.org/dist/xcb-util-wm-0.4.0.tar.gz
@@ -173,7 +218,6 @@ ExternalProject_Add(libXdamage
   INSTALL_COMMAND echo "NONE"
 )
 
-
 ExternalProject_Add(freetype
   URL https://download.savannah.gnu.org/releases/freetype/freetype-2.9.tar.gz
   PREFIX ${CMAKE_CURRENT_BINARY_DIR}/freetype-2.9
@@ -181,7 +225,6 @@ ExternalProject_Add(freetype
   BUILD_COMMAND sh "${CMAKE_SOURCE_DIR}/freetype-helper.sh" "${CMAKE_CURRENT_BINARY_DIR}/freetype-2.9/src/freetype;$ENV{PKG_CONFIG_PATH};${CMAKE_CURRENT_BINARY_DIR}/freetype-2.9"
   INSTALL_COMMAND echo "NONE"
 )
-
 
 ExternalProject_Add(damageproto
   URL https://www.x.org/archive//individual/proto/damageproto-1.2.1.tar.gz
@@ -192,9 +235,9 @@ ExternalProject_Add(damageproto
 )
 
 ExternalProject_Add(m4
-  URL https://ftp.gnu.org/gnu/m4/m4-1.4.tar.gz
-  PREFIX ${CMAKE_CURRENT_BINARY_DIR}/m4-1.4
-  CONFIGURE_COMMAND "${CMAKE_CURRENT_BINARY_DIR}/m4-1.4/src/m4/configure" "--prefix=${CMAKE_CURRENT_BINARY_DIR}/m4-1.4"
+  URL https://ftp.gnu.org/gnu/m4/m4-1.4.18.tar.xz
+  PREFIX ${CMAKE_CURRENT_BINARY_DIR}/m4-1.4.18
+  CONFIGURE_COMMAND "${CMAKE_CURRENT_BINARY_DIR}/m4-1.4.18/src/m4/configure" "--prefix=${CMAKE_CURRENT_BINARY_DIR}/m4-1.4.18"
   BUILD_COMMAND make
   INSTALL_COMMAND make install
 )
@@ -215,7 +258,6 @@ ExternalProject_Add(fixesproto
   INSTALL_COMMAND make install
 )
 
-
 ExternalProject_Add(expat
   URL https://sourceforge.net/projects/expat/files/expat/2.1.0/expat-2.1.0.tar.gz/download
   PREFIX ${CMAKE_CURRENT_BINARY_DIR}/expat-2.0.1
@@ -223,8 +265,6 @@ ExternalProject_Add(expat
   BUILD_COMMAND make
   INSTALL_COMMAND make install
 )
-
-
 
 ExternalProject_Add(libxshmfence
   URL https://www.x.org/archive//individual/lib/libxshmfence-1.2.tar.gz
@@ -252,7 +292,6 @@ ExternalProject_Add(xcb-proto
 
 ExternalProject_Add(pcre
   URL https://downloads.sourceforge.net/pcre/pcre-8.41.tar.bz2
-
   PREFIX ${CMAKE_CURRENT_BINARY_DIR}/pcre-8.41
   CONFIGURE_COMMAND echo "NONE"
   BUILD_COMMAND sh "${CMAKE_SOURCE_DIR}/pcre-helper.sh" "${CMAKE_CURRENT_BINARY_DIR}/pcre-8.41/src/pcre;$ENV{PKG_CONFIG_PATH};${CMAKE_CURRENT_BINARY_DIR}/pcre-8.41"
@@ -311,7 +350,7 @@ ExternalProject_Add(mesa
   URL https://mesa.freedesktop.org/archive/mesa-17.3.3.tar.xz
   PREFIX ${CMAKE_CURRENT_BINARY_DIR}/mesa-17.3.3
   CONFIGURE_COMMAND echo "NONE"
-  BUILD_COMMAND sh "${CMAKE_SOURCE_DIR}/mesa-helper.sh" "${CMAKE_CURRENT_BINARY_DIR}/mesa-17.3.3/src/mesa;$ENV{PKG_CONFIG_PATH};${CMAKE_CURRENT_BINARY_DIR}/mesa-17.3.3;${INCLUDE_DIRS}:"
+  BUILD_COMMAND sh "${CMAKE_SOURCE_DIR}/mesa-helper.sh" "${CMAKE_CURRENT_BINARY_DIR}/mesa-17.3.3/src/mesa;$ENV{PKG_CONFIG_PATH};${CMAKE_CURRENT_BINARY_DIR}/mesa-17.3.3;${INCLUDE_DIRS}"
   INSTALL_COMMAND echo "NONE"
 )
 
@@ -347,7 +386,6 @@ ExternalProject_Add(glproto
   INSTALL_COMMAND make install
 )
 
-
 ExternalProject_Add(libX11
   URL https://www.x.org/archive//individual/lib/libX11-1.6.5.tar.gz
   PREFIX ${CMAKE_CURRENT_BINARY_DIR}/libX11-1.6.5
@@ -356,78 +394,61 @@ ExternalProject_Add(libX11
   INSTALL_COMMAND echo "NONE"
 )
 
-
-ExternalProject_Add(qt5_proj
+ExternalProject_Add(qt5
   URL https://download.qt.io/archive/qt/5.5/5.5.0/single/qt-everywhere-opensource-src-5.5.0.tar.gz
   PREFIX ${CMAKE_CURRENT_BINARY_DIR}/qt-everywhere-opensource-src-5.5.0
   CONFIGURE_COMMAND echo "NONE"
-  BUILD_COMMAND sh "${CMAKE_SOURCE_DIR}/qt_helper.sh" "${CMAKE_CURRENT_BINARY_DIR}/qt-everywhere-opensource-src-5.5.0/src/qt5_proj;$ENV{PKG_CONFIG_PATH};${CMAKE_CURRENT_BINARY_DIR}/qt-everywhere-opensource-src-5.5.0;${INCLUDE_DIRS};${LIB_DIRS}"
+  BUILD_COMMAND sh "${CMAKE_SOURCE_DIR}/qt_helper.sh" "${CMAKE_CURRENT_BINARY_DIR}/qt-everywhere-opensource-src-5.5.0/src/qt5;$ENV{PKG_CONFIG_PATH};${CMAKE_CURRENT_BINARY_DIR}/qt-everywhere-opensource-src-5.5.0;${INCLUDE_DIRS};${LIB_DIRS};${CMAKE_CURRENT_BINARY_DIR}/libxcb-1.12/include"
   INSTALL_COMMAND echo "NONE"
 
 )
 
-
-
-
-
-MESSAGE($ENV{PKG_CONFIG_PATH})
-
-
-ExternalProject_Get_Property(qt5_proj install_dir)
-
-add_library(qt5 STATIC IMPORTED)
-
-
-
-set_property(TARGET qt5 PROPERTY IMPORTED_LOCATION ${install_dir}/lib/qt-everywhere-opensource-src-5.5.0)
-
-#find_package(LLVM REQUIRED)
-#find_package(Qt5 REQUIRED COMPONENTS Widgets Core Gui Svg OpenGL)
-
-include_directories("${PROJECT_SOURCE_DIR}/include")
-
-#qt5_wrap_ui(UI_HEADERS src/mainwindow.ui)
-
-set(SOURCES
-src/main.cpp
-src/mainwindow.cpp
-src/celestialbody.cpp
-src/orbitaltrack.cpp
-src/solarsystem.cpp
+ExternalProject_Add(qt_solar_clock
+  SOURCE_DIR ${CMAKE_SOURCE_DIR}
+  PREFIX ${CMAKE_SOURCE_DIR}
+  BUILD_COMMAND sh "${CMAKE_SOURCE_DIR}/qmake-helper.sh" "${CMAKE_SOURCE_DIR};${CMAKE_CURRENT_BINARY_DIR}/qt-everywhere-opensource-src-5.5.0/src/qt5/qtbase/bin/qmake;${CMAKE_SOURCE_DIR}/qt_solar_clock.pro;$ENV{PKG_CONFIG_PATH};${INCLUDE_DIRS};${LIB_DIRS}"
+  INSTALL_COMMAND echo "NONE"
 )
 
-#qt5_wrap_cpp(SOURCES include/celestialbody.h include/orbitaltrack.h include/solarsystem.h include/mainwindow.h)
 
-add_executable(qt_solar_clock ${SOURCES} ${UI_HEADERS})
-
-set_target_properties(qt_solar_clock PROPERTIES AUTOMOC TRUE)
-
+#################################################################################################################################
+# Set dependencies 
+#################################################################################################################################
 add_dependencies(xproto util-macros)
 add_dependencies(libXau xproto)
 add_dependencies(libpthread-stubs libXau)
 add_dependencies(xcb-proto libpthread-stubs)
 add_dependencies(libxcb xcb-proto)
+add_dependencies(libXext libX11)
+add_dependencies(libdrm libpciaccess)
+add_dependencies(libXfixes fixesproto)
 
+add_dependencies(xcb-util-image libxcb)
+add_dependencies(xcb-util-keysyms libxcb)
+add_dependencies(xcb-util-renderutil libxcb)
+add_dependencies(xcb-util m4)
+add_dependencies(xcb-util-wm xcb-util)
+add_dependencies(xcb-util-wm m4)
+add_dependencies(xcb-util-wm libxcb)
+add_dependencies(xcb-util-image xcb-util)
 
+add_dependencies(libxkbcommon bison)
+add_dependencies(libxkbcommon libxcb)
 
 add_dependencies(libX11 xextproto)
 add_dependencies(libX11 xtrans)
 add_dependencies(libX11 kbproto)
 add_dependencies(libX11 inputproto)
-add_dependencies(libX11 libxcb)
+add_dependencies(libX11 libxcb) 
 
-add_dependencies(libXext libX11)
 add_dependencieS(libXdamage damageproto)
 add_dependencies(libXdamage fixesproto)
 add_dependencies(libXdamage libXfixes)
 add_dependencies(libXdamage libX11)
 
-add_dependencies(libdrm libpciaccess)
-
-
 add_dependencies(mesa libdrm)
 add_dependencies(mesa zlib)
-add_dependencies(mesa xextproto)
+add_dependencies(mesa xextproto) 
 add_dependencies(mesa glproto)
 add_dependencies(mesa libXext)
 add_dependencies(mesa libXdamage)
@@ -437,23 +458,18 @@ add_dependencies(mesa libxshmfence)
 add_dependencies(mesa libXfixes)
 add_dependencies(mesa expat)
 
-add_dependencies(xcb-util m4)
+add_dependencies(qt5 libxkbcommon)
+add_dependencies(qt5 xcb-util-renderutil)
+add_dependencies(qt5 xcb-util-keysyms)
+add_dependencies(qt5 xcb-util-image)
+add_dependencies(qt5 xcb-util-wm)
+add_dependencies(qt5 freetype)
+add_dependencies(qt5 libxcb)
+add_dependencies(qt5 mesa)
+add_dependencies(qt5 pcre)
+add_dependencies(qt5 libX11)
 
-add_dependencies(xcb-util-wm xcb-util)
-add_dependencies(xcb-util-wm m4)
-add_dependencies(xcb-util-wm libxcb)
-
-add_dependencies(qt5_proj xcb-util-wm)
-add_dependencies(qt5_proj freetype)
-add_dependencies(qt5_proj libxcb)
-add_dependencies(qt5_proj mesa)
-add_dependencies(qt5_proj pcre)
-add_dependencies(qt5_proj libX11)
-
-add_dependencies(qt_solar_clock qt5_proj)
-
-# Use the Widgets module from Qt 5.
-target_link_libraries(qt_solar_clock qt5)
+add_dependencies(qt_solar_clock qt5)
 
 
 
