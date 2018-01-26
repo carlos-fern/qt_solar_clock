@@ -27,6 +27,7 @@ A Simple solar cock based on Qt5 OpenGLWidgets. Uses [NASA reference data](https
 - Ubuntu 16.04
 - G++
 - Build-Essential
+- Pkg-Config
 - CMake >= 2.8.11
 
 ## System Requirements
